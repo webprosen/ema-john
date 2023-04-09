@@ -41,7 +41,7 @@ const Shop = () => {
             newCart = [...remaining, exists];
         }
         setCart(newCart);
-        addToDb(product.id)
+        addToDb(product.id);
     }
 
     return (

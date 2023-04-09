@@ -1,20 +1,20 @@
-import { useState } from 'react';
 import './Header.css';
 import logo from '../../images/Logo.svg';
-
-useState
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
         <div className='header'>
             <div className='header-logo'>
-                <img src={logo} alt="" />
+                <Link to="/">
+                    <img src={logo} alt="" />
+                </Link>
             </div>
             <div className='header-nav'>
-                <a href="/shop">Shop</a>
-                <a href="">Order</a>
-                <a href="">Inventory</a>
-                <a href="">Login</a>
+                <Link to="/">Shop</Link>
+                <Link to="/orders">Orders</Link>
+                <Link to="/inventory">Inventory</Link>
+                <Link to="/login">Login</Link>
             </div>
         </div>
     );
