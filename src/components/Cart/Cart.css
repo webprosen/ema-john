@@ -1,3 +1,10 @@
 .cart-container{
     min-height: calc(100vh - 80px);
 }
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
