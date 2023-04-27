@@ -1,11 +1,9 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import './Login.css'
-    ;
 import { Link } from 'react-router-dom';
-const Login = () => {
 
+const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -16,8 +14,13 @@ const Login = () => {
     return (
         <div className='container mt-5'>
             <div className='login-container'>
-                <h2 className='text-right mb-4'>Please Login</h2>
+                <h2 className='text-right mb-4'>Please Register</h2>
                 <Form onSubmit={handleSubmit}>
+
+                    <Form.Group className="mb-3">
+                        <Form.Label>Your Name</Form.Label>
+                        <Form.Control type="text" placeholder="Your name" name="name" />
+                    </Form.Group>
 
                     <Form.Group className="mb-3">
                         <Form.Label>Email address</Form.Label>
@@ -26,11 +29,11 @@ const Login = () => {
 
                     <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="prosen"/>
+                        <Form.Control type="password" placeholder="Password" name="prosen" />
                     </Form.Group>
-                    <div className='mb-3'>Don't have account? <Link to="/register">Register</Link></div>
+                    <div className='mb-3'>Already have account? <Link to="/login">Login</Link></div>
                     <Button variant="primary" type="submit">
-                        Login
+                        Register
                     </Button>
 
                 </Form>
@@ -39,4 +42,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

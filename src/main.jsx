@@ -8,6 +8,8 @@ import Orders from './components/Orders/Orders';
 import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import cartProductsLoader from './loaders/loader';
+import Register from './components/Register/Register';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   }
