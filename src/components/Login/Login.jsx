@@ -8,13 +8,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const [show, setShow] = useState(false);
     const [error, setError] = useState('');
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
-    console.log(from);
     
     const handleLogin = (event) => {
         event.preventDefault();
@@ -53,8 +53,13 @@ const Login = () => {
 
                     <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" name="password" required/>
+                        <Form.Control type={show? 'text' : 'password'} placeholder="Password" name="password" required/>
                     </Form.Group>
+                    <div onClick={()=>{setShow(!show)}}>
+                        {
+                            show? <a>Hide Password</a> : <a>Show Password</a>
+                        }
+                    </div>
                     <div className='mb-3'>Don't have account? <Link to="/register">Register</Link></div>
                     <Button variant="primary" type="submit">
                         Login
